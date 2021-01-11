@@ -1,3 +1,10 @@
-const arr = ['Ian', 'Marco', '7788']
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx'
 
-document.write(...arr)
+ReactDOM.render(
+  <>
+   <App/>
+  </>
+  ,document.getElementById('root')
+)

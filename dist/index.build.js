@@ -1,1 +1,0 @@
-(()=>{var a;alert("!"),(a=document).write.apply(a,["Ian","Marco","123"])})();

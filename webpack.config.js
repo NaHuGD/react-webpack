@@ -8,21 +8,27 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    port: 9000
   },
   module: {
     rules: [
       {
-        test: /\.m?(js|jsx)$/,
+        test: /\.(js|jsx)$/i,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: [
-              ['@babel/preset-env', { targets: "defaults" }]
-            ]
-          }
+          // 可以在 .babelrc檔案設定
+          // options: {
+          //   presets: [
+          //     ['@babel/preset-react', { targets: "defaults" }]
+          //   ]
+          // }
         }
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      }
     ]
   }
 }
