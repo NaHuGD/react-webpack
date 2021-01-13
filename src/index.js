@@ -4,7 +4,7 @@ import App from './App.jsx'
 
 ReactDOM.render(
   <>
-   <App/>
+    <App/>
   </>
   ,document.getElementById('root')
 )

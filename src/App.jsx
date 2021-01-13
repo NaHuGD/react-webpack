@@ -3,8 +3,11 @@ import './all.css'
 
 const App = () => {
   return (
-    <h1 className="active">Hello Webpack React test</h1>
+    <>
+      <h1 className="active">Hello Webpack React test</h1>
+      <div className="bgImg"></div>
+    </>
   )
 }
 
-export default App
+export default App;
