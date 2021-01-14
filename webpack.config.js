@@ -1,6 +1,8 @@
 const path = require('path');
 // 引入mini-css-extract-plugin處理css background-image
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// 引入html-webpack-plugin自動處理編譯後index.html檔案
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -30,7 +32,7 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          { 
+          {
             loader: MiniCssExtractPlugin.loader,
             // 設定css編譯後抓取的公共路徑位置(ex:background-image屬性)
             options: {
@@ -55,8 +57,15 @@ module.exports = {
       }
     ],
   },
-  plugins: [new MiniCssExtractPlugin({
-    // 編譯後css檔案位置及路徑
-    filename: 'css/main.css'
-  })]
+  plugins: [
+    new MiniCssExtractPlugin({
+      // 編譯後css檔案位置及路徑
+      filename: 'css/main.css'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'react webpack',
+      // 抓取對應位置的html模板(處理ReactDOM的進入點)
+      template: './template.html'
+    })
+  ]
 }
