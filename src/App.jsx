@@ -1,5 +1,5 @@
 import React from 'react'
-import './all.css'
+import '@/all.css'
 
 const App = () => {
   return (

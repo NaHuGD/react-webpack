@@ -12,6 +12,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.build.js'
   },
+  // 在source中方便觀看
+  devtool: 'eval-cheap-module-source-map',
   devServer: {
     contentBase: './dist',
     port: 9000
@@ -70,5 +72,12 @@ module.exports = {
       template: './template.html'
     }),
     new CleanWebpackPlugin()
-  ]
+  ],
+  resolve: {
+    alias: {
+      // import時可以用＠代替 ../src
+      '@': path.resolve(__dirname, '/src')
+    },
+    extensions: ['.js', '.jsx']
+  }
 }
