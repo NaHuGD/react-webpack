@@ -15,6 +15,8 @@ module.exports = {
   // 在source中方便觀看
   devtool: 'eval-cheap-module-source-map',
   devServer: {
+    // 讓browser自動刷新
+    inline: true,
     contentBase: './dist',
     port: 9000
   },
@@ -23,15 +25,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/i,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          // 可以在 .babelrc檔案設定
-          // options: {
-          //   presets: [
-          //     ['@babel/preset-react', { targets: "defaults" }]
-          //   ]
-          // }
-        }
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.css$/i,
