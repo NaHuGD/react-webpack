@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // 引入html-webpack-plugin自動處理編譯後index.html檔案
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 每次編譯，清除編譯後資料夾
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
